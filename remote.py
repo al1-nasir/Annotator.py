@@ -24,8 +24,9 @@ TOPIC = ['', 'Politics', 'Social issues', 'Culture', 'Entertainment', 'Education
 INTENT = ['', 'Informative', 'Relatable', 'Satirical']
 
 def get_meme_identifier(filename):
-    """Get meme identifier from filename (filename without extension)"""
-    return os.path.splitext(filename)[0]
+    """Extract just the number from filename (e.g., meme_3401.jpg -> 3401)"""
+    match = re.search(r'(\d+)', filename)
+    return match.group(1) if match else os.path.splitext(filename)[0]
 
 def extract_number_for_sorting(filename):
     """Extract number from filename for sorting"""
