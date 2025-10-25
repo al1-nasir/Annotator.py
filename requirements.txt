@@ -1,15 +1,4 @@
-# Remove pyproject.toml
-rm pyproject.toml
-
-# Create requirements.txt
-cat > requirements.txt << EOF
 streamlit
 pandas
 pillow
 openpyxl
-EOF
-
-# Commit and push
-git add .
-git commit -m "Use requirements.txt instead of pyproject.toml"
-git push
